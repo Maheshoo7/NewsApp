@@ -80,6 +80,7 @@ const placeReducer = (state = initialState, action) => {
     case constants.DELETE_PINNED_ARTICLE: {
       const {index} = action.payload;
 
+      state.pinnedArticles.splice(index, 1);
       state.articles.splice(index, 1);
 
       return {
